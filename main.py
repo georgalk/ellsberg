@@ -1,5 +1,5 @@
 import streamlit as st
-st.set_page_config(layout="wide")
+#st.set_page_config(layout="wide")
 # Hide Streamlit menu and footer
 hide_streamlit_style = """
 <style>
