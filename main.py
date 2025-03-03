@@ -1,5 +1,5 @@
 import streamlit as st
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+st.set_page_config(layout="wide")
 # Hide Streamlit menu and footer
 hide_streamlit_style = """
 <style>
@@ -7,8 +7,8 @@ hide_streamlit_style = """
 footer {visibility: hidden;}
 </style>
 """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
-st.set_page_config(layout="wide")
 import plotly.graph_objects as go
 import time
 from attr.converters import optional
