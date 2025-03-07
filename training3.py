@@ -2,11 +2,6 @@ import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
 
-# Initialize session state variables
-if "stage" not in st.session_state:
-    st.session_state["stage"] = 1  # Start at Stage 1 (betting on Red)
-if "choices" not in st.session_state or not isinstance(st.session_state["choices"], list):
-    st.session_state["choices"] = []  # Ensure choices is an empty list
 
 def create_figure(red_indices, total_balls=9):
     """Creates a 3x3 (or smaller) box with colored balls at certain positions."""
@@ -126,6 +121,12 @@ def matching_probability(optionA, optionB, probability_strings, probability_floa
             st.error("Please make a selection for all probabilities before proceeding.")
 
 def training3():
+    # Initialize session state variables
+    if "stage" not in st.session_state:
+        st.session_state["stage"] = 1  # Start at Stage 1 (betting on Red)
+    if "choices" not in st.session_state or not isinstance(st.session_state["choices"], list):
+        st.session_state["choices"] = []  # Ensure choices is an empty list
+
     st.header("Question Training 3")
     st.markdown("""
     Suppose now you are faced with a situation in which you have no information about the relative proportions of the three colors in the urn.
